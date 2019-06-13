@@ -5,7 +5,9 @@
     "es6": true,
     "node": true,
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+  ],
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module",
@@ -52,7 +54,7 @@
     "react/jsx-closing-tag-location": [ "error" ],
     "react/jsx-curly-spacing": [ "error", { "when": "never", "children": true } ],
     "react/jsx-equals-spacing": [ "error", "never" ],
-    "react/jsx-filename-extension": [ "error" ],
+    "react/jsx-filename-extension": [ "off" ],
     "react/jsx-indent": [ "error", 2 ],
     "react/jsx-indent-props": [ "error", 2 ],
     "react/jsx-key": [ "error" ],

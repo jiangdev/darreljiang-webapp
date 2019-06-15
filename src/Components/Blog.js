@@ -2,7 +2,13 @@ import React from 'react'
 
 function Blog() {
   return (
-    <div>Blog</div>
+    <div>
+      <div className='ui vertical stripe segment'>
+        <div className='ui text container'>
+          <h3 className='ui header'>Hello World</h3>
+        </div>
+      </div>
+    </div>
   )
 }
 

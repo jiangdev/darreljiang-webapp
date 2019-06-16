@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
 import React from 'react'
+import SentimentSatisfied from '@material-ui/icons/SentimentSatisfiedAlt'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-
 const useStyles = makeStyles(theme => ({
   toolbar: {
     // borderBottom: `1px solid ${theme.palette.divider}`,
@@ -16,10 +17,6 @@ const useStyles = makeStyles(theme => ({
   },
   toolbarTitle: {
     flex: 1,
-  },
-  toolbarSecondary: {
-    justifyContent: 'space-between',
-    overflowX: 'auto',
   },
   toolbarLink: {
     padding: theme.spacing(1),
@@ -40,9 +37,11 @@ function Navbar() {
         component='h2'
         noWrap
         variant='h5'
-      />
-      {/* <Link class='active item' to='/'>Home</Link>
-      <Link class='item' to='/blog'>Blog</Link> */}
+      >
+        <Button>
+          <SentimentSatisfied fontSize='large' />
+        </Button>
+      </Typography>
     </Toolbar>
   )
 }

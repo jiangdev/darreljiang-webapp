@@ -76,6 +76,18 @@ const useStyles = makeStyles(theme => ({
       paddingRight: 0,
     },
   },
+  textContainer: {
+    position: 'relative',
+    padding: theme.spacing(8),
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(6),
+      paddingRight: 0,
+    },
+  },
+  headerText: {
+    fontSize: '6vw',
+    fontWeight: 'bold',
+  },
   mainGrid: {
     marginTop: theme.spacing(3),
   },
@@ -121,23 +133,6 @@ const featuredPosts = [
   },
 ]
 
-// const posts = [ post1, post2, post3 ]
-
-const archives = [
-  'March 2020',
-  'February 2020',
-  'January 2020',
-  'December 2019',
-  'November 2019',
-  'October 2019',
-  'September 2019',
-  'August 2019',
-  'July 2019',
-  'June 2019',
-  'May 2019',
-  'April 2019',
-]
-
 const social = [ 'GitHub', 'Twitter', 'Facebook' ]
 
 export default function Home() {
@@ -146,36 +141,42 @@ export default function Home() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth='lg'>
+      <Container maxWidth='disabled'>
         <main>
           {/* Main featured post */}
-          <Paper className={classes.mainFeaturedPost}>
-            {/* Increase the priority of the hero background image */}
-            {
-              <img
-                alt='background'
-                src='https://source.unsplash.com/user/erondu'
-                style={{ display: 'none' }}
-              />
-            }
-            <div className={classes.overlay} />
-            <Grid container>
-              <Grid item md={6}>
-                <div className={classes.mainFeaturedPostContent}>
-                  <Typography color='inherit' component='h1' gutterBottom variant='h3'>
-                    Title of a longer featured blog post
-                  </Typography>
-                  <Typography color='inherit' paragraph variant='h5'>
-                    Multiple lines of text that form the lede, informing new readers quickly and
-                    efficiently about what&apos;s most interesting in this post&apos;s contents.
-                  </Typography>
-                  <Link href='#' variant='subtitle1'>
-                    Continue reading…
-                  </Link>
-                </div>
-              </Grid>
+          {/* <Paper className={classes.mainFeaturedPost}> */}
+          {/* Increase the priority of the hero background image */}
+          {/* {
+            <img
+              alt='background'
+              src='https://source.unsplash.com/user/erondu'
+              style={{ display: 'none' }}
+            />
+          } */}
+          {/* <div className={classes.overlay} /> */}
+          <Grid className={classes.textContainer}container direction='column' spacing='2'>
+            <Grid item md={12}>
+              <Typography className={classes.headerText}>
+                  Darrel Jiang.
+              </Typography>
             </Grid>
-          </Paper>
+            <Grid item md={12}>
+              <Typography className={classes.headerText}>
+                  Software Developer.
+              </Typography>
+            </Grid>
+            <Grid item md={12}>
+              <Typography className={classes.headerText}>
+                  Hooman.
+              </Typography>
+            </Grid>
+            <Grid item md={12}>
+              <Typography className={classes.headerText} variant='h3'>
+                <a href='https://www.linkedin.com/in/darreljiang'>LinkedIn.</a>
+              </Typography>
+            </Grid>
+          </Grid>
+          {/* </Paper> */}
           {/* End main featured post */}
           {/* Sub featured posts */}
           <Grid className={classes.cardGrid} container spacing={4}>
@@ -219,11 +220,7 @@ export default function Home() {
                 From the Firehose
               </Typography>
               <Divider />
-              {/* {posts.map(post => (
-                <Markdown className={classes.markdown} key={post.substring(0, 40)}>
-                  {post}
-                </Markdown>
-              ))} */}
+
             </Grid>
             {/* End main content */}
             {/* Sidebar */}
@@ -240,11 +237,7 @@ export default function Home() {
               <Typography className={classes.sidebarSection} gutterBottom variant='h6'>
                 Archives
               </Typography>
-              {archives.map(archive => (
-                <Link display='block' href='#' key={archive} variant='body1'>
-                  {archive}
-                </Link>
-              ))}
+
               <Typography className={classes.sidebarSection} gutterBottom variant='h6'>
                 Social
               </Typography>

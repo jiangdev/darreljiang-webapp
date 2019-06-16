@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import React from 'react'
@@ -7,13 +6,11 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 const useStyles = makeStyles(theme => ({
   toolbar: {
-    // borderBottom: `1px solid ${theme.palette.divider}`,
     position: 'fixed',
     top: 0,
-    width: '100%',
+    width: '100vw',
     zIndex: 10,
-    // backgroundColor: '#ffffff',
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#1A1B1C',
   },
   toolbarTitle: {
     flex: 1,
@@ -29,7 +26,7 @@ function Navbar() {
 
   return (
 
-    <Toolbar className={classes.toolbar}>
+    <Toolbar className={classes.toolbar} >
       <Typography
         align='left'
         className={classes.toolbarTitle}
@@ -39,7 +36,7 @@ function Navbar() {
         variant='h5'
       >
         <Button>
-          <SentimentSatisfied fontSize='large' />
+          <SentimentSatisfied fontSize='large' style={{ color: 'white' }} />
         </Button>
       </Typography>
     </Toolbar>

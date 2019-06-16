@@ -180,7 +180,7 @@
     "linebreak-style": [ "error", "unix" ],
     "max-lines": [ "error", 200 ],
     "max-params": [ "warn", 4 ],
-    "max-len": [ "error", {
+    "max-len": [ "warn", {
       "code": 100,
       "ignoreComments": true,
       "ignoreUrls": true,

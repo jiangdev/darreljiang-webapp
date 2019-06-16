@@ -47,22 +47,9 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     backgroundColor: 'rgba(0,0,0,.3)',
   },
-  mainFeaturedPostContent: {
-    position: 'relative',
-    padding: theme.spacing(8),
-    [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(6),
-      paddingRight: 0,
-    },
-  },
   textContainer: {
     position: 'relative',
-    padding: theme.spacing(8),
     color: 'white',
-    [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(6),
-      paddingRight: 0,
-    },
     backgroundColor: '#1A1B1C',
     height: '100vh',
     width: '100vw',
@@ -71,35 +58,16 @@ const useStyles = makeStyles(theme => ({
   headerText: {
     fontSize: '5em',
   },
-  mainGrid: {
-    marginTop: theme.spacing(3),
-  },
-  card: {
-    display: 'flex',
-  },
-  cardDetails: {
-    flex: 1,
-  },
-  cardMedia: {
-    width: 160,
-  },
-  markdown: {
-    ...theme.typography.body2,
-    padding: theme.spacing(3, 0),
-  },
-  sidebarAboutBox: {
-    padding: theme.spacing(2),
-    backgroundColor: theme.palette.grey[200],
-  },
-  sidebarSection: {
-    marginTop: theme.spacing(3),
-  },
   footer: {
     backgroundColor: theme.palette.background.paper,
     marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0),
   },
 }))
+
+function isMobileDevice() {
+  return typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1
+}
 
 export default function Home() {
   const classes = useStyles()
@@ -109,17 +77,17 @@ export default function Home() {
       <CssBaseline />
       <Grid className={classes.textContainer} container direction='column' justify='center' spacing={2}>
         <Grid item>
-          <Typography align='center' style={{ fontWeight: '500' }} variant='h2'>
+          <Typography align='center' style={{ fontWeight: '500' }} variant={isMobileDevice() ? 'h2' : 'h1'}>
                   Darrel Jiang
           </Typography>
         </Grid>
         <Grid item>
-          <Typography align='center' variant='h5'>
+          <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
                   A Passionate Software Developer
           </Typography>
         </Grid>
         <Grid item>
-          <Typography align='center' variant='h5'>
+          <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
             <a href='https://www.linkedin.com/in/darreljiang'style={{ color: '#0077CC' }}>linkedin.com/in/darreljiang</a>
           </Typography>
         </Grid>

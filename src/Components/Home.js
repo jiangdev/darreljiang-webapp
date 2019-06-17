@@ -1,10 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles'
+import CardMedia from '@material-ui/core/CardMedia'
 import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-
+import adventureImage from '../img/IMG_0984.jpg'
 function MadeWithLove() {
   return (
     <Typography align='center' color='textSecondary' variant='body2'>
@@ -51,7 +52,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     color: 'white',
     backgroundColor: '#1A1B1C',
-    height: '100vh',
+    height: '95vh',
     width: '100vw',
     margin: 0,
   },
@@ -62,6 +63,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0),
+  },
+  media: {
+    height: '100vh',
   },
 }))
 
@@ -78,12 +82,15 @@ export default function Home() {
       <Grid className={classes.textContainer} container direction='column' justify='center' spacing={2}>
         <Grid item>
           <Typography align='center' style={{ fontWeight: '500' }} variant={isMobileDevice() ? 'h2' : 'h1'}>
-                  Darrel Jiang
+            Darrel Jiang
           </Typography>
         </Grid>
         <Grid item>
           <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-                  A Passionate Software Developer
+            A passionate software developer,
+          </Typography>
+          <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
+            Avid adventurer
           </Typography>
         </Grid>
         <Grid item>
@@ -93,6 +100,12 @@ export default function Home() {
         </Grid>
       </Grid>
 
+      <CardMedia
+        className={classes.media}
+        component='img'
+        image={adventureImage}
+        title='Adventure Is Out There'
+      />
       <footer className={classes.footer}>
         <Container maxWidth='lg'>
           <Typography align='center' variant='h6'>

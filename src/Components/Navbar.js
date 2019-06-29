@@ -10,7 +10,6 @@ const useStyles = makeStyles(theme => ({
     top: 0,
     width: '100vw',
     zIndex: 10,
-    backgroundColor: '#1A1B1C',
   },
   toolbarTitle: {
     flex: 1,

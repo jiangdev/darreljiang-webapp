@@ -1,11 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles'
-import CardMedia from '@material-ui/core/CardMedia'
 import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import adventureImage from '../img/IMG_0984.jpg'
+
 function MadeWithLove() {
   return (
     <Typography align='center' color='textSecondary' variant='body2'>
@@ -33,9 +34,8 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
-    marginTop: theme.spacing(12),
     marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://source.unsplash.com/user/erondu)',
+    backgroundImage: `url(${adventureImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -46,13 +46,11 @@ const useStyles = makeStyles(theme => ({
     bottom: 0,
     right: 0,
     left: 0,
-    backgroundColor: 'rgba(0,0,0,.3)',
+    backgroundColor: 'rgba(0,0,0,.7)',
   },
   textContainer: {
     position: 'relative',
-    color: 'white',
-    backgroundColor: '#1A1B1C',
-    height: '95vh',
+    height: '100vh',
     width: '100vw',
     margin: 0,
   },
@@ -79,33 +77,29 @@ export default function Home() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Grid className={classes.textContainer} container direction='column' justify='center' spacing={2}>
-        <Grid item>
-          <Typography align='center' style={{ fontWeight: '500' }} variant={isMobileDevice() ? 'h2' : 'h1'}>
+      <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: 'url' }}>
+        <div className={classes.overlay} />
+        <Grid className={classes.textContainer} container direction='column' justify='center' spacing={2}>
+          <Grid item>
+            <Typography align='center' style={{ fontWeight: '500' }} variant={isMobileDevice() ? 'h2' : 'h1'}>
             Darrel Jiang
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
             A passionate software developer,
-          </Typography>
-          <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
+            </Typography>
+            <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
             Avid adventurer
-          </Typography>
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
+              <a href='https://www.linkedin.com/in/darreljiang'style={{ color: '#0077CC' }}>linkedin.com/in/darreljiang</a>
+            </Typography>
+          </Grid>
         </Grid>
-        <Grid item>
-          <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-            <a href='https://www.linkedin.com/in/darreljiang'style={{ color: '#0077CC' }}>linkedin.com/in/darreljiang</a>
-          </Typography>
-        </Grid>
-      </Grid>
-
-      <CardMedia
-        className={classes.media}
-        component='img'
-        image={adventureImage}
-        title='Adventure Is Out There'
-      />
+      </Paper>
       <footer className={classes.footer}>
         <Container maxWidth='lg'>
           <Typography align='center' variant='h6'>

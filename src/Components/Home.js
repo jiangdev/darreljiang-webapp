@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-import adventureImage from '../img/IMG_0984.jpg'
+import adventureImage from '../img/adventure.jpg'
 
 function MadeWithLove() {
   return (

@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import ExpCard from './ExpCard'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import React from 'react'
@@ -34,7 +35,6 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
-    marginBottom: theme.spacing(4),
     backgroundImage: `url(${adventureImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -71,7 +71,7 @@ function isMobileDevice() {
   return typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1
 }
 
-export default function Home() {
+const Home = () => {
   const classes = useStyles()
 
   return (
@@ -100,6 +100,7 @@ export default function Home() {
           </Grid>
         </Grid>
       </Paper>
+      <ExpCard />
       <footer className={classes.footer}>
         <Container maxWidth='lg'>
           <Typography align='center' variant='h6'>
@@ -114,3 +115,5 @@ export default function Home() {
     </React.Fragment>
   )
 }
+
+export default Home

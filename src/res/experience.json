@@ -1,0 +1,30 @@
+[
+  {
+    "company": "Control Microsystems",
+    "term": "September 2013 - April 2015",
+    "position": "Software Engineer",
+    "points": [
+      "Lead Software engineer for Control Microsystems, developing code for embedded systems projects using C and worked on an interactive UI written in C# to display fuel level sensor information in a vehicle",
+      "Tasked with presenting components to clients and developing requirements based on client feedback",
+      "In charge of talent acquisition and the recruitment of new software developers"
+    ],
+    "technologies": [
+      "C",
+      "C#",
+      "Java",
+      "MPLAB X"
+    ]
+  },
+  {
+    "company": "Ungerboeck Software International (USI)",
+    "term": "June 2014 - August 2014",
+    "position": "Software Development Intern",
+    "points": [
+      "Developed web services in VB.Net and refactored Visual Basic window forms from the company's old silverlight infrastructure to its new web based application."
+    ],
+    "technologies": [
+      "VB .Net",
+      "Visual Basic"
+    ]
+  }
+]

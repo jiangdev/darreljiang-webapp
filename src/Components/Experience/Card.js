@@ -28,7 +28,6 @@ const useStyles = makeStyles(theme => ({
     }},
   container: {
     paddingTop: '32px',
-    paddingBottom: '32px',
     backgroundColor: theme.palette.grey[200],
   },
   title: {

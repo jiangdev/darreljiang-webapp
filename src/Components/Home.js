@@ -8,6 +8,7 @@ import Paper from '@material-ui/core/Paper'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import adventureImage from '../img/adventure.jpg'
+import darrelImage from '../img/darrel.jpg'
 
 function MadeWithLove() {
   return (
@@ -17,7 +18,7 @@ function MadeWithLove() {
   )
 }
 
-const useStyles = makeStyles(theme => ({
+const styles = makeStyles(theme => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
@@ -36,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
-    backgroundImage: `url(${adventureImage})`,
+    backgroundImage: `url(${darrelImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -47,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     bottom: 0,
     right: 0,
     left: 0,
-    backgroundColor: 'rgba(0,0,0,.7)',
+    backgroundColor: 'rgba(0,0,0,0)',
   },
   textContainer: {
     position: 'relative',
@@ -73,7 +74,7 @@ function isMobileDevice() {
 }
 
 const Home = () => {
-  const classes = useStyles()
+  const classes = styles()
 
   return (
     <React.Fragment>
@@ -96,7 +97,7 @@ const Home = () => {
           </Grid>
           <Grid item>
             <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-              <a href='https://www.linkedin.com/in/darreljiang'style={{ color: '#0077CC' }}>linkedin.com/in/darreljiang</a>
+              <a href='https://www.linkedin.com/in/darreljiang'style={{ color: '#FFFFFF' }}>linkedin.com/in/darreljiang</a>
             </Typography>
           </Grid>
         </Grid>

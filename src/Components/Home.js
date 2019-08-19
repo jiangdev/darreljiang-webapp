@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import ExpCard from './Experience/Card'
@@ -8,17 +8,10 @@ import Paper from '@material-ui/core/Paper'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import adventureImage from '../img/adventure.jpg'
-import darrelImage from '../img/darrel.jpg'
+import mainBackgroundImage from '../img/main-image.jpg'
+import mainBackgroundMobileImage from '../img/main-mobile-image.jpg'
 
-function MadeWithLove() {
-  return (
-    <Typography align='center' color='textSecondary' variant='body2'>
-      {'Built with love by the me!'}
-    </Typography>
-  )
-}
-
-const styles = makeStyles(theme => ({
+const styles = theme => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
@@ -37,7 +30,16 @@ const styles = makeStyles(theme => ({
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
-    backgroundImage: `url(${darrelImage})`,
+    backgroundImage: `url(${mainBackgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+  },
+  mainFeaturedPostMobile: {
+    position: 'relative',
+    backgroundColor: theme.palette.grey[800],
+    color: theme.palette.common.white,
+    backgroundImage: `url(${mainBackgroundMobileImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -67,55 +69,70 @@ const styles = makeStyles(theme => ({
   media: {
     height: '100vh',
   },
-}))
+})
 
-function isMobileDevice() {
-  return typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1
+const isMobileDevice = () => typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1
+const isMobileInPortrait = () => isMobileDevice && window.orientation === 0
+
+class Home extends React.Component {
+  state = {
+    screenOrientation: 0,
+  }
+
+  componentDidMount() {
+    window.addEventListener('orientationchange', this.setScreenOrientation)
+  }
+
+  setScreenOrientation = () => {
+    this.setState({ screenOrientation: window.orientation })
+  }
+
+  render() {
+    const { classes } = this.props
+
+    return (
+      <React.Fragment>
+        <CssBaseline />
+        <Paper className={isMobileDevice() && isMobileInPortrait() ? classes.mainFeaturedPostMobile : classes.mainFeaturedPost} style={{ backgroundImage: 'url' }}>
+          <div className={classes.overlay} />
+          <Grid className={classes.textContainer} container direction='column' justify='center' spacing={2}>
+            <Grid item>
+              <Typography align='center' style={{ fontWeight: '500' }} variant={isMobileDevice() ? 'h2' : 'h1'}>
+              Darrel Jiang
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
+              A passionate software developer,
+              </Typography>
+              <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
+              Avid adventurer
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
+                <a href='https://www.linkedin.com/in/darreljiang'style={{ color: '#FFFFFF' }}>linkedin.com/in/darreljiang</a>
+              </Typography>
+            </Grid>
+          </Grid>
+        </Paper>
+        <ExperienceList />
+        <footer className={classes.footer}>
+          <Container maxWidth='lg'>
+            <Typography align='center' variant='h6'>
+              Footer
+            </Typography>
+            <Typography align='center' color='textSecondary' component='p' variant='subtitle1'>
+              More footer content to come!
+            </Typography>
+            <Typography align='center' color='textSecondary' variant='body2'>
+              {'Built with love by the me!'}
+            </Typography>
+          </Container>
+        </footer>
+      </React.Fragment>
+    )
+  }
 }
 
-const Home = () => {
-  const classes = styles()
-
-  return (
-    <React.Fragment>
-      <CssBaseline />
-      <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: 'url' }}>
-        <div className={classes.overlay} />
-        <Grid className={classes.textContainer} container direction='column' justify='center' spacing={2}>
-          <Grid item>
-            <Typography align='center' style={{ fontWeight: '500' }} variant={isMobileDevice() ? 'h2' : 'h1'}>
-            Darrel Jiang
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-            A passionate software developer,
-            </Typography>
-            <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-            Avid adventurer
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-              <a href='https://www.linkedin.com/in/darreljiang'style={{ color: '#FFFFFF' }}>linkedin.com/in/darreljiang</a>
-            </Typography>
-          </Grid>
-        </Grid>
-      </Paper>
-      <ExperienceList />
-      <footer className={classes.footer}>
-        <Container maxWidth='lg'>
-          <Typography align='center' variant='h6'>
-            Footer
-          </Typography>
-          <Typography align='center' color='textSecondary' component='p' variant='subtitle1'>
-            More footer content to come!
-          </Typography>
-          <MadeWithLove />
-        </Container>
-      </footer>
-    </React.Fragment>
-  )
-}
-
-export default Home
+export default withStyles(styles)(Home)

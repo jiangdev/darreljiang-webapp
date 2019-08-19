@@ -35,28 +35,19 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const renderExperience = experiencePoints => (
-  <ul>
-    {map(experiencePoints, experience => <li>{experience}</li>)}
-  </ul>
-)
+const renderExperience = experiencePoints => map(experiencePoints, experience => (<li key={experience}>{experience}</li>))
 
-const renderTechnologies = technologies => (
-  <List>
-    {
-      map(technologies, technology => (
-        <ListItem>
-          <ListItemAvatar>
-            <Avatar>
-              <FolderIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary={technology} />
-        </ListItem>
-      ))
-    }
-  </List>
-)
+const renderTechnologies = technologies => map(technologies, technology => (
+  <ListItem key={`${technology}`}>
+    <ListItemAvatar>
+      <Avatar>
+        <FolderIcon />
+      </Avatar>
+    </ListItemAvatar>
+    <ListItemText primary={technology} />
+  </ListItem>
+))
+
 
 const Card = ({ company, experiencePoints, technologies, term, position }) => {
   const classes = useStyles()
@@ -74,7 +65,9 @@ const Card = ({ company, experiencePoints, technologies, term, position }) => {
                 <Typography color='inherit' gutterBottom variant='subtitle1'>
                   <i>{position}, {term}</i>
                 </Typography>
-                {renderExperience(experiencePoints)}
+                <ul>
+                  {renderExperience(experiencePoints)}
+                </ul>
               </div>
             </Grid>
             <Grid item md={3}>
@@ -82,7 +75,9 @@ const Card = ({ company, experiencePoints, technologies, term, position }) => {
                 Technologies
               </Typography>
               <div className={classes.demo}>
-                {renderTechnologies(technologies)}
+                <List>
+                  {renderTechnologies(technologies)}
+                </List>
               </div>
             </Grid>
           </Grid>

@@ -16,6 +16,7 @@
       "experimentalObjectRestSpread": true,
     },
   },
+  "parser": "babel-eslint",
   "plugins": [ "react", "wyze" ],
   "root": true,
   "rules": {
@@ -32,7 +33,7 @@
     "react/no-multi-comp": [ "error", { "ignoreStateless": true } ],
     "react/no-redundant-should-component-update": [ "error" ],
     "react/no-render-return-value": [ "error" ],
-    "react/no-set-state": [ "warn" ],
+    // "react/no-set-state": [ "warn" ],
     "react/no-typos": [ "error" ],
     "react/no-string-refs": [ "warn" ],
     "react/no-unescaped-entities": [ "error" ],
@@ -114,7 +115,7 @@
     "no-floating-decimal": [ "error" ],
     "no-implicit-coercion": [ "error" ],
     "no-implied-eval": [ "error" ],
-    "no-invalid-this": [ "error" ],
+    // "no-invalid-this": [ "error" ],
     "no-iterator": [ "error" ],
     "no-labels": [ "error" ],
     "no-lone-blocks": [ "error" ],
@@ -181,7 +182,7 @@
     "max-lines": [ "error", 200 ],
     "max-params": [ "warn", 4 ],
     "max-len": [ "warn", {
-      "code": 100,
+      "code": 120,
       "ignoreComments": true,
       "ignoreUrls": true,
       "ignoreTemplateLiterals": true

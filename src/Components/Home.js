@@ -103,10 +103,10 @@ class Home extends React.Component {
             </Grid>
             <Grid item>
               <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-              A passionate software developer,
+              Passionate software developer,
               </Typography>
               <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-              Avid adventurer
+              avid adventurer
               </Typography>
             </Grid>
             <Grid item>
@@ -126,7 +126,7 @@ class Home extends React.Component {
               More footer content to come!
             </Typography>
             <Typography align='center' color='textSecondary' variant='body2'>
-              {'Built with love by the me!'}
+              {'Built with love by me!'}
             </Typography>
           </Container>
         </footer>

@@ -2,6 +2,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import ExpCard from './Experience/Card'
+import ExpChart from './Experience/ExpChart'
 import ExperienceList from './Experience/List'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
@@ -116,7 +117,8 @@ class Home extends React.Component {
             </Grid>
           </Grid>
         </Paper>
-        <ExperienceList />
+        {/* <ExperienceList /> */}
+        <ExpChart />
         <footer className={classes.footer}>
           <Container maxWidth='lg'>
             <Typography align='center' variant='h6'>

@@ -23,7 +23,6 @@ class Home extends React.Component {
       <React.Fragment>
         <CssBaseline />
         <MainPage />
-        <ExpChart />
         <ExpTimeline />
         <Footer />
       </React.Fragment>

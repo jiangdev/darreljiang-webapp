@@ -3,7 +3,7 @@ import {
 } from 'react-router-dom'
 import Home from '../components/Home/index.js'
 
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar.js'
 import React from 'react'
 
 function App() {

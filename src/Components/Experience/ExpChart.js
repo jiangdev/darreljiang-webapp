@@ -1,5 +1,6 @@
-import Chart from 'react-google-charts'
-import React from 'react'
+import Chart from '../../../node_modules/react-google-charts'
+import Paper from '../../../node_modules/@material-ui/core/Paper'
+import React from '../../../node_modules/react'
 
 const columns = [
   { type: 'string', label: 'Task ID' },
@@ -165,15 +166,16 @@ const rows = [
 ]
 
 const ExpChart = () => (
-  <div className='App'>
-    <Chart
-      chartType='Gantt'
-      data={[ columns, ...rows ]}
-      height='1000px'
-      legendToggle
-      width='100%'
-    />
-  </div>
+  <React.Fragment>
+    <Paper>
+      <Chart
+        chartType='Gantt'
+        data={[ columns, ...rows ]}
+        height='1000px'
+        legendToggle
+      />
+    </Paper>
+  </React.Fragment>
 )
 
 export default ExpChart

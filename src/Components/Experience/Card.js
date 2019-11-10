@@ -1,16 +1,16 @@
-import { makeStyles } from '@material-ui/core/styles'
-import Avatar from '@material-ui/core/Avatar'
-import Container from '@material-ui/core/Container'
-import FolderIcon from '@material-ui/icons/Folder'
-import Grid from '@material-ui/core/Grid'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemAvatar from '@material-ui/core/ListItemAvatar'
-import ListItemText from '@material-ui/core/ListItemText'
-import Paper from '@material-ui/core/Paper'
-import React from 'react'
-import Typography from '@material-ui/core/Typography'
-import map from 'lodash/map'
+import { makeStyles } from '../../../node_modules/@material-ui/core/styles'
+import Avatar from '../../../node_modules/@material-ui/core/Avatar'
+import Container from '../../../node_modules/@material-ui/core/Container'
+import FolderIcon from '../../../node_modules/@material-ui/icons/Folder'
+import Grid from '../../../node_modules/@material-ui/core/Grid'
+import List from '../../../node_modules/@material-ui/core/List'
+import ListItem from '../../../node_modules/@material-ui/core/ListItem'
+import ListItemAvatar from '../../../node_modules/@material-ui/core/ListItemAvatar'
+import ListItemText from '../../../node_modules/@material-ui/core/ListItemText'
+import Paper from '../../../node_modules/@material-ui/core/Paper'
+import React from '../../../node_modules/react'
+import Typography from '../../../node_modules/@material-ui/core/Typography'
+import map from '../../../node_modules/lodash/map'
 
 const useStyles = makeStyles(theme => ({
   mainFeaturedPost: {
@@ -20,12 +20,14 @@ const useStyles = makeStyles(theme => ({
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
   },
-  mainFeaturedPostContent: { position: 'relative',
+  mainFeaturedPostContent: {
+    position: 'relative',
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(6),
       paddingRight: 0,
-    }},
+    },
+  },
   container: {
     paddingTop: '32px',
     backgroundColor: theme.palette.grey[200],

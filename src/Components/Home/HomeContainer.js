@@ -1,16 +1,18 @@
-import { withStyles } from '@material-ui/core/styles'
-import Container from '@material-ui/core/Container'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import ExpCard from './Experience/Card'
-import ExpChart from './Experience/ExpChart'
-import ExperienceList from './Experience/List'
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
-import React from 'react'
-import Typography from '@material-ui/core/Typography'
-import adventureImage from '../img/adventure.jpg'
-import mainBackgroundImage from '../img/main-image.jpg'
-import mainBackgroundMobileImage from '../img/main-mobile-image.jpg'
+import { withStyles } from '../../../node_modules/@material-ui/core/styles'
+import Container from '../../../node_modules/@material-ui/core/Container'
+import CssBaseline from '../../../node_modules/@material-ui/core/CssBaseline'
+import ExpCard from '../Experience/Card'
+import ExpChart from '../Experience/ExpChart'
+import ExpTimeline from '../Experience/ExpTimeline'
+import FrontPage from './FrontPage'
+import Grid from '../../../node_modules/@material-ui/core/Grid'
+import Paper from '../../../node_modules/@material-ui/core/Paper'
+import React from '../../../node_modules/react'
+import Typography from '../../../node_modules/@material-ui/core/Typography'
+import adventureImage from '../../assets/images/adventure.jpg'
+import mainBackgroundImage from '../../assets/images/main-image.jpg'
+import mainBackgroundMobileImage from '../../assets/images/main-mobile-image.jpg'
+// import styles from './styles'
 
 const styles = theme => ({
   toolbar: {
@@ -94,31 +96,9 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <CssBaseline />
-        <Paper className={isMobileDevice() && isMobileInPortrait() ? classes.mainFeaturedPostMobile : classes.mainFeaturedPost} style={{ backgroundImage: 'url' }}>
-          <div className={classes.overlay} />
-          <Grid className={classes.textContainer} container direction='column' justify='center' spacing={2}>
-            <Grid item>
-              <Typography align='center' style={{ fontWeight: '500' }} variant={isMobileDevice() ? 'h2' : 'h1'}>
-              Darrel Jiang
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-              Passionate software developer,
-              </Typography>
-              <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-              avid adventurer
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography align='center' variant={isMobileDevice() ? 'h5' : 'h4'}>
-                <a href='https://www.linkedin.com/in/darreljiang'style={{ color: '#FFFFFF' }}>linkedin.com/in/darreljiang</a>
-              </Typography>
-            </Grid>
-          </Grid>
-        </Paper>
-        {/* <ExperienceList /> */}
+        <FrontPage />
         <ExpChart />
+        <ExpTimeline />
         <footer className={classes.footer}>
           <Container maxWidth='lg'>
             <Typography align='center' variant='h6'>

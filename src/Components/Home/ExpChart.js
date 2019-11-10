@@ -1,6 +1,6 @@
-import Chart from '../../../node_modules/react-google-charts'
-import Paper from '../../../node_modules/@material-ui/core/Paper'
-import React from '../../../node_modules/react'
+import Chart from 'react-google-charts'
+import Paper from '@material-ui/core/Paper'
+import React from 'react'
 
 const columns = [
   { type: 'string', label: 'Task ID' },

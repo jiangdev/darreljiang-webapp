@@ -5,6 +5,7 @@ import Footer from './Footer'
 import MainPage from './MainPage'
 import React from '../../../node_modules/react'
 
+
 class Home extends React.Component {
   state = {
     screenOrientation: 0,

@@ -1,7 +1,35 @@
 import { Typography } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
 import Chart from 'react-google-charts'
 import Paper from '@material-ui/core/Paper'
 import React from 'react'
+
+const styles = theme => ({
+  root: {
+    padding: theme.spacing(4),
+  },
+})
+
+const companyData = [
+  [
+    { type: 'string', id: 'Technology' },
+    { type: 'string', id: 'Type' },
+    { type: 'date', id: 'Start' },
+    { type: 'date', id: 'End' },
+  ],
+  [
+    'Organization',
+    'Monsanto',
+    new Date(2015, 7),
+    new Date(2019, 6),
+  ],
+  [
+    'Organization',
+    'Ocelot',
+    new Date(2019, 6),
+    new Date(2019, 11),
+  ],
+]
 
 const data = [
   [
@@ -102,10 +130,24 @@ const data = [
   ],
 ]
 
-const ExpTimeline = () => (
+const ExpTimeline = ({ classes }) => (
   <React.Fragment>
-    <Typography variant='h5'>My Experience</Typography>
-    <Paper>
+    <Paper className={classes.root}>
+      <Typography variant='h4'>Where I've been, What I've done</Typography>
+      <br />
+      <Chart
+        chartType='Timeline'
+        data={companyData}
+        height={'100px'}
+        loader={<div>Loading Chart</div>}
+        options={{
+          timeline: {
+            showBarLabels: true,
+            showRoLabels: false,
+          },
+        }}
+        rootProps={{ 'data-testid': '1' }}
+      />
       <Chart
         chartType='Timeline'
         data={data}
@@ -122,4 +164,4 @@ const ExpTimeline = () => (
   </React.Fragment>
 )
 
-export default ExpTimeline
+export default withStyles(styles)(ExpTimeline)

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import styles from './App.module.scss';
+import Header from '../Header';
 
 const App = () => (
-  <div className={styles.hello}>
-    Hello World
-  </div>
+  <>
+    <Header />
+  </>
 );
 
 export default App;

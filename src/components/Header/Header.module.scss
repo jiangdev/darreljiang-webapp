@@ -1,0 +1,51 @@
+@import '../../theme/animations.scss';
+
+.header {
+  height: 100vh;
+
+  background-image: linear-gradient(to right bottom,
+  #4eade6,
+  rgba(181, 223, 245, 0.1)),
+  url(../../images/darrel-pro.jpg);
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+
+  clip-path: polygon(50% 0%, 100% 0, 100% 80%, 20% 100%, 0% 80%, 0 0);
+
+  .textBox {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    .titleLeft {
+      font-size: 6rem;
+      animation: introduceLeft .5s ease-out;
+      animation-fill-mode: backwards;
+      display: inline-block;
+    }
+
+    .titleRight {
+      font-size: 6rem;
+      animation: introduceRight .5s ease-out .5s;
+      animation-fill-mode: backwards;
+      display: inline-block;
+      padding-left: 2rem;
+    }
+
+    .subtitle {
+      font-size: 2.5rem;
+      font-weight: 700;
+      animation: introduceUp .5s ease-out 1s;
+      animation-fill-mode: backwards;
+      display: block;
+      letter-spacing: .5rem;
+      padding: 2rem;
+    }
+  }
+}

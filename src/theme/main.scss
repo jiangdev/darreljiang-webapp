@@ -1,0 +1,58 @@
+@import "_variables";
+@import "_mixins";
+
+/*
+Removes any padding the browser will add to html elements like h1s and h2s
+This essential does a reset and we can start from scratch
+*/
+
+/*
+after and before sets not just the current elements, but every element. best practice.
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+
+  /* box-sizing: border-box; */
+
+  /* Sets each and every element to inherit the box sizing from body */
+  /* better practice using inheritence */
+  box-sizing: inherit;
+}
+
+html {
+  /* This is the ROOT font size */
+  /* bad practice, should not set default font size */
+
+  /* font-size: 10px; */
+  // This defines what 1 rem is
+  // 10px/16px = 62.5%
+  font-size: 62.5%;
+  font-family: 'Lato';
+
+  // With making everything defined against rem, we can easily define media
+  // queries based on this root font size
+
+  @include respond(tab-land) { //width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16
+  }
+
+  @include respond(tab-port) { //width < 600?
+    // Is the width lower than 900
+    font-size: 50%; //1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px, 12/16
+  }
+}
+
+body {
+  box-sizing: border-box;
+
+  // @include respond(tab-port) { //width < 600?
+  //   padding:0;
+  // }
+}

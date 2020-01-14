@@ -1,0 +1,21 @@
+@import '../../theme/variables.scss';
+@import '../../theme/mixins.scss';
+
+.expTimeline {
+  padding: 2rem 5rem 0rem 5rem;
+
+  @include respond(phone) {
+    padding: 2rem 0rem 0rem 0rem;
+    text-align: center;
+  }
+
+  .title {
+    padding-bottom: 2rem;
+    font-size: 4rem;
+    color: $color-grey-dark-3;
+  }
+
+  .chart {
+    display: flex;
+  }
+}

@@ -10,7 +10,7 @@ const Header = () => (
         <div className={styles.titleRight}>I'm Darrel</div>
       </div>
       <div className={styles.subtitle}>
-        <div className={styles.subtitleWithPadding}>A passionate software developer,</div>
+        <div className={styles.subtitleWithPadding}>Passionate software developer,</div>
         <div>avid adventurer</div>
       </div>
     </div>

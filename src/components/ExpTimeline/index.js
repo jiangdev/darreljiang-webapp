@@ -38,8 +38,8 @@ const data = [
 ];
 
 const ExpTimeline = () => (
-  <div className={styles.expTimeline}>
-    <div className={styles.title}>
+  <div className={styles['exp-timeline']}>
+    <div className={styles['exp-timeline__title']}>
       Where I&apos;ve been and what I&apos;ve done
     </div>
     <Chart
@@ -57,7 +57,7 @@ const ExpTimeline = () => (
       rootProps={{ 'data-testid': '1' }}
     />
     <Chart
-      className={styles.chart}
+      className={styles['exp-timeline__chart']}
       chartType="Timeline"
       data={data}
       height="800px"

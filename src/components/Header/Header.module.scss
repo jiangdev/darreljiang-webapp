@@ -1,15 +1,13 @@
 @import '../../theme/animations.scss';
 @import '../../theme/mixins.scss';
-@import '../../theme/variables';
+@import '../../theme/variables.scss';
+@import '../../theme/animations.scss';
 
 .header {
   height: 100vh;
 
-  background-image: linear-gradient(to bottom,
-  #2980B9,
-  #6DD5FA82,
-  #FFFFFF91),
-  url(../../images/darrel-pro.jpg);
+  background-image: linear-gradient(to bottom, #2980b9, #6dd5fa82, #ffffff91),
+    url(../../images/darrel-pro.jpg);
 
   background-size: cover;
   background-position: center;
@@ -25,44 +23,54 @@
     clip-path: polygon(50% 0%, 100% 0, 100% 90%, 20% 100%, 0% 90%, 0 0);
   }
 
-  .textBox {
+  &__text-box {
     position: absolute;
-    width: 100%;
+    width: 45%;
     top: 35%;
     left: 50%;
     color: white;
     transform: translate(-50%, -50%);
     text-align: center;
+  }
 
-    .title {
-      font-size: 8rem;
-      @include respond(tab-port) {
-        font-size: 6rem;
-      }
-      .titleLeft {
-        animation: introduceLeft .5s ease-out;
-        display: inline-block;
-      }
+  &__typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.15em; /* Adjust as needed */
+    animation: typing 6s steps(32, end) infinite,
+      blink-caret 0.75s step-end infinite;
+  }
 
-      .titleRight {
-        animation: introduceRight .5s ease-out .5s;
-        animation-fill-mode: backwards;
-        display: inline-block;
-        padding-left: 2rem;
-      }
+  &__title {
+    font-size: 8rem;
+    @include respond(tab-port) {
+      font-size: 6rem;
+    }
+    &--left {
+      animation: introduceLeft 0.5s ease-out;
+      display: inline-block;
     }
 
-    .subtitle {
-      font-size: 3rem;
-      font-weight: 700;
-      animation: introduceUp .5s ease-out 1s;
+    &--right {
+      animation: introduceRight 0.5s ease-out 0.5s;
       animation-fill-mode: backwards;
-      display: block;
-      letter-spacing: .5rem;
+      display: inline-block;
+      padding-left: 2rem;
+    }
+  }
 
-      .subtitleWithPadding {
-        padding-top: 2rem;
-      }
+  &__subtitle {
+    font-size: 3rem;
+    font-weight: 700;
+    animation: introduceUp 0.5s ease-out 1s;
+    animation-fill-mode: backwards;
+    display: block;
+    letter-spacing: 0.5rem;
+
+    &--with-padding {
+      padding-top: 2rem;
     }
   }
 }

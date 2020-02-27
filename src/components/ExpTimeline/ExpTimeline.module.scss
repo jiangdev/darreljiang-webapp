@@ -1,7 +1,7 @@
 @import '../../theme/variables.scss';
 @import '../../theme/mixins.scss';
 
-.expTimeline {
+.exp-timeline {
   padding: 2rem 5rem 0rem 5rem;
 
   @include respond(phone) {
@@ -9,13 +9,13 @@
     text-align: center;
   }
 
-  .title {
+  &__title {
     padding-bottom: 2rem;
     font-size: 4rem;
     color: $color-grey-dark-3;
   }
 
-  .chart {
+  &__chart {
     display: flex;
   }
 }

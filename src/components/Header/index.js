@@ -3,14 +3,14 @@ import React from 'react';
 import styles from './Header.module.scss';
 
 const Header = () => (
-  <div className={styles.header}>
-    <div className={styles.textBox}>
-      <div className={styles.title}>
-        <div className={styles.titleLeft}>Hi,</div>
-        <div className={styles.titleRight}>I&apos;m Darrel</div>
+  <div className={styles['header']}>
+    <div className={styles['header__text-box']}>
+      <div className={styles['header__title']}>
+        <div className={styles['header__title--left']}>Hi,</div>
+        <div className={styles['header__title--right']}>I&apos;m Darrel</div>
       </div>
-      <div className={styles.subtitle}>
-        <div className={styles.subtitleWithPadding}>
+      <div className={styles['header__subtitle']}>
+        <div className={styles['header__subtitle--with-padding']}>
           Passionate software developer,
         </div>
         <div>avid adventurer</div>

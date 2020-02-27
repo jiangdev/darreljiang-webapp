@@ -7,7 +7,7 @@ const Header = () => (
     <div className={styles.textBox}>
       <div className={styles.title}>
         <div className={styles.titleLeft}>Hi,</div>
-        <div className={styles.titleRight}>I'm Darrel</div>
+        <div className={styles.titleRight}>I&apos;m Darrel</div>
       </div>
       <div className={styles.subtitle}>
         <div className={styles.subtitleWithPadding}>

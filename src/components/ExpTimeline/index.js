@@ -39,7 +39,9 @@ const data = [
 
 const ExpTimeline = () => (
   <div className={styles.expTimeline}>
-    <div className={styles.title}>Where I've been and what I've done</div>
+    <div className={styles.title}>
+      Where I&apos;ve been and what I&apos;ve done
+    </div>
     <Chart
       className={styles.chart}
       chartType="Timeline"

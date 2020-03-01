@@ -1,5 +1,5 @@
-@import "_variables";
-@import "_mixins";
+@import '_variables';
+@import '_mixins';
 
 /*
 Removes any padding the browser will add to html elements like h1s and h2s
@@ -31,15 +31,17 @@ html {
   // 10px/16px = 62.5%
   font-size: 62.5%;
   font-family: 'Lato';
-
+  background-color: $color-light-shade;
   // With making everything defined against rem, we can easily define media
   // queries based on this root font size
 
-  @include respond(tab-land) { //width < 1200?
+  @include respond(tab-land) {
+    //width < 1200?
     font-size: 56.25%; //1 rem = 9px, 9/16
   }
 
-  @include respond(tab-port) { //width < 600?
+  @include respond(tab-port) {
+    //width < 600?
     // Is the width lower than 900
     font-size: 50%; //1rem = 8px, 8/16 = 50%
   }

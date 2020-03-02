@@ -6,7 +6,8 @@
   "extends": [
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "airbnb"
+    "airbnb",
+    "prettier"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -19,7 +20,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "prettier"],
   "rules": {
     "react/jsx-filename-extension": [
       1,
@@ -27,6 +28,8 @@
         "extensions": [".js", ".jsx"]
       }
     ],
-    "dot-notation": "off"
+    "dot-notation": "off",
+    "prettier/prettier": "error"
   }
 }
+

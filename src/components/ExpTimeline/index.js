@@ -60,7 +60,7 @@ const ExpTimeline = () => (
       className={styles['exp-timeline__chart']}
       chartType="Timeline"
       data={data}
-      height="800px"
+      height="55rem"
       loader={<div>Loading Chart</div>}
       options={{
         timeline: {

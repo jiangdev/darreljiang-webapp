@@ -10,7 +10,8 @@
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
-    "react-google-charts": "^3.0.15"
+    "react-google-charts": "^3.0.15",
+    "@material-ui/core": "^4.8.3"
   },
   "scripts": {
     "compile:sass-watch": "node-sass src/sass/main.scss public/style.css -w",
@@ -37,7 +38,6 @@
     ]
   },
   "devDependencies": {
-    "@material-ui/core": "^4.8.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",

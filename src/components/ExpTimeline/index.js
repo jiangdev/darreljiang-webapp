@@ -1,6 +1,6 @@
-import React from 'react';
-import Chart from 'react-google-charts';
-import styles from './ExpTimeline.module.scss';
+import React from 'react'
+import Chart from 'react-google-charts'
+import styles from './ExpTimeline.module.scss'
 
 const companyData = [
   [
@@ -11,7 +11,7 @@ const companyData = [
   ],
   ['Organization', 'Monsanto', new Date(2015, 7), new Date(2019, 6)],
   ['Organization', 'Ocelot', new Date(2019, 6), new Date(2019, 11)],
-];
+]
 
 const data = [
   [
@@ -35,7 +35,7 @@ const data = [
   ['Swift 3', 'Mobile', new Date(2017, 3), new Date(2018, 7)],
   ['Swift 4', 'Mobile', new Date(2017, 10), new Date(2018, 7)],
   ['DynamoDB', 'Database', new Date(2019, 2), new Date(2019, 11)],
-];
+]
 
 const ExpTimeline = () => (
   <div className={styles['exp-timeline']}>
@@ -60,7 +60,7 @@ const ExpTimeline = () => (
       className={styles['exp-timeline__chart']}
       chartType="Timeline"
       data={data}
-      height="55rem"
+      height="70rem"
       loader={<div>Loading Chart</div>}
       options={{
         timeline: {
@@ -70,6 +70,6 @@ const ExpTimeline = () => (
       rootProps={{ 'data-testid': '2' }}
     />
   </div>
-);
+)
 
-export default ExpTimeline;
+export default ExpTimeline

@@ -22,10 +22,12 @@
 
   @include respond(tab-port) {
     clip-path: polygon(50% 0%, 100% 0, 100% 85%, 20% 100%, 0% 85%, 0 0);
+    background-attachment: unset;
   }
 
   @include respond(phone) {
     clip-path: polygon(50% 0%, 100% 0, 100% 90%, 20% 100%, 0% 90%, 0 0);
+    background-attachment: unset;
   }
 
   &__text-box {

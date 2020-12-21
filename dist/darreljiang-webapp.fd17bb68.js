@@ -1008,10 +1008,10 @@ try {
     __self: void 0,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4,
-      columnNumber: 8
+      lineNumber: 5,
+      columnNumber: 3
     }
-  }, "Hello World"), document.getElementById("root"));
+  }, "Hello World, this is a work in progress on Darrel Jiang's website"), document.getElementById("root"));
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;

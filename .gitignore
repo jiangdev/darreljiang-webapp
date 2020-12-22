@@ -63,6 +63,7 @@ typings/
 
 # parcel caching
 /.parcel-cache
+/dist
 
 # dependencies
 /node_modules
